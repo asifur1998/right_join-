@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>insert</title>
+</head>
+<body>
+<form action="insert_core.php"method="post">
+	Company Name : <input type="text"name="name"placeholder="Company name">
+	<br/>
+	Company Title  : <input type="text"name="title"placeholder="Company title">
+	<br/>
+	Company Discription  :<input type="text"name="discription"placeholder="Company discription">
+	<br/>
+	<input type="submit"name="submit">
+</form>
+</body>
+</html>

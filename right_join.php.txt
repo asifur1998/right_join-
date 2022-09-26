@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>right_join</title>
+</head>
+<body>
+<table border="1 px solid">
+	<tr>
+		<th> Company Name </th>
+		<th> Product Title </th>
+		<th> Product Discription </th>
+		<th> Company Location </th>
+		<th> Company Phone </th>
+		<th> Product Catagory </th>
+	</tr>
+	<?php 
+
+	require_once('connection.php');
+	//$display = "SELECT * FROM brand";
+	$display = "SELECT brand.name,brand.title,brand.discription,company.location,company.phone,company.catagory FROM brand Right JOIN company ON brand.id = company.company_id";
+	$runQuery = mysqli_query($connect,$display);
+	while($row = mysqli_fetch_array($runQuery)){
+		 ?>
+		 <tr>
+		     <td> <?php echo $row['name'];?> </td>
+		     <td> <?php echo $row['title'];?> </td>
+		     <td> <?php echo $row['discription'];?> </td>
+		     <td> <?php echo $row['location'];?> </td>
+		     <td> <?php echo $row['phone'];?> </td>
+		     <td> <?php echo $row['catagory'];?> </td>
+	     </tr>
+		 <?php
+	}
+	?>
+</table>
+</body>
+</html>

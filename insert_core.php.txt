@@ -1,0 +1,19 @@
+<?php  
+
+require_once('connection.php');
+
+if (isset($_POST['submit'])){
+	$name = $_POST['name'];
+	$title = $_POST['title'];
+	$discription = $_POST['discription'];
+	if ($name != "" && $title != "" && $discription != ""){
+		$insert = "INSERT INTO brand (name,title,discription) VALUES ('$name','$title','$discription')";
+		$runQuery = mysqli_query($connect,$insert);
+		if ($runQuery  == true) {
+			echo " Data inserted";
+		}else{
+			echo " Data not inserted";
+		}
+	}
+}
+?>

@@ -1,0 +1,19 @@
+<?php 
+require_once('connection.php');
+
+if(isset($_POST['submit'])){
+	$location = $_POST['location'];
+	$phone = $_POST['phone'];
+	$company_id = $_POST['company_id'];
+	$catagory = $_POST['catagory'];
+	if ($location != "" && $phone != "" && $company_id != "" && $catagory != ""){
+		$insert = "INSERT INTO company (location,phone,company_id,catagory) VALUES ('$location','$phone','$company_id','$catagory')";
+		$runQuery = mysqli_query($connect,$insert);
+		if($runQuery == true){
+			echo "Company info inserted";
+		}else{
+			echo "Company info not inserted";
+		}
+	}
+}
+?>

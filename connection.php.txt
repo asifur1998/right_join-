@@ -1,0 +1,12 @@
+<?php 
+$host_name = "localhost";
+$user_name = "root";
+$pass_word = "";
+$db_name = "right_join";
+
+$connect = mysqli_connect($host_name,$user_name,$pass_word,$db_name);
+
+if ($connect == false){
+    echo " data base not connect ";
+}
+?>
